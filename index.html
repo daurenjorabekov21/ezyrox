@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezyrox - Ultimate Supercar Portal & Encyclopedia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Neon Animations & Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dc2626;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ef4444;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        .glass-card:hover {
+            border-color: rgba(239, 68, 68, 0.8);
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-['Plus_Jakarta_Sans',sans-serif] overflow-x-hidden selection:bg-red-600 selection:text-white">
+
+    <!-- Glowing Background Lights -->
+    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[180px] pointer-events-none animate-pulse-glow"></div>
+    <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[180px] pointer-events-none animate-pulse-glow"></div>
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-2xl border-b border-red-900/40">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="#" class="text-3xl md:text-4xl font-black font-['Orbitron'] tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400">
+                EZYR<span class="text-white">OX</span>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 font-['Orbitron'] text-xs font-extrabold tracking-widest">
+                <a href="#hero" class="hover:text-red-500 transition-all duration-300">BOSH SAHIFA</a>
+                <a href="#catalog" class="hover:text-red-500 transition-all duration-300">KATALOG</a>
+                <a href="#search-section" class="hover:text-red-500 transition-all duration-300">QIDIRUV</a>
+                <a href="#encyclopedia" class="hover:text-red-500 transition-all duration-300">ENSIKLOPEDIYA</a>
+                <a href="#stats" class="hover:text-red-500 transition-all duration-300">STATISTIKA</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="playEngineSound()" class="px-6 py-3 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 hover:from-red-500 hover:to-orange-500 text-white font-['Orbitron'] font-extrabold text-xs tracking-wider rounded-xl shadow-lg shadow-red-600/40 hover:scale-105 active:scale-95 transition-all">
+                    🔊 MOTOR OVOZI
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 text-center overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#151515_1px,transparent_1px),linear-gradient(to_bottom,#151515_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30"></div>
+        
+        <div class="max-w-5xl mx-auto z-10 relative">
+            <span class="inline-block py-2 px-6 rounded-full bg-red-500/10 border border-red-500/40 text-red-500 font-['Orbitron'] font-extrabold text-xs tracking-widest uppercase mb-8 shadow-[0_0_25px_rgba(239,68,68,0.2)]">
+                ⚡ KELAJAKNING ULKAN SUPERKARLAR PORTALI
+            </span>
+            <h1 class="text-6xl sm:text-7xl md:text-9xl font-black font-['Orbitron'] tracking-tight mb-8 uppercase leading-none">
+                EZYROX <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 drop-shadow-[0_0_40px_rgba(239,68,68,0.6)]">UNIVERSE</span>
+            </h1>
+            <p class="max-w-3xl mx-auto text-slate-300 text-lg md:text-2xl mb-12 font-light leading-relaxed">
+                Dunyodagi eng sara, o'ta tezkor, qudratli va qimmatbaho sport avtomobillari haqida eng mukammal va ulkan o'zbekcha ensiklopediya portaliga xush kelibsiz!
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#catalog" class="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-['Orbitron'] font-black text-sm rounded-2xl shadow-2xl shadow-red-600/50 hover:scale-105 transition-all uppercase tracking-wider">
+                    Katalogni Ko'rish
+                </a>
+                <a href="#encyclopedia" class="w-full sm:w-auto px-10 py-5 bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-['Orbitron'] font-black text-sm rounded-2xl hover:border-red-500 transition-all uppercase tracking-wider">
+                    Katta Maqolalar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section id="search-section" class="py-12 bg-slate-950/60 border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="w-full lg:w-1/2">
+                    <input type="text" id="searchInput" onkeyup="filterCars()" placeholder="Mashina nomini qidiring (masalan: Bugatti, BMW)..." class="w-full px-6 py-4 bg-slate-900 border border-slate-800 rounded-2xl text-white placeholder-slate-500 focus:outline-none focus:border-red-500 font-['Orbitron'] text-sm transition-all shadow-inner">
+                </div>
+                <div class="flex flex-wrap gap-3 w-full lg:w-auto justify-center">
+                    <button onclick="filterCategory('ALL')" class="px-5 py-3 bg-red-600 text-white rounded-xl font-['Orbitron'] text-xs font-bold uppercase tracking-wider hover:bg-red-500 transition-all">BARCHASI</button>
+                    <button onclick="filterCategory('GIPERKAR')" class="px-5 py-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl font-['Orbitron'] text-xs font-bold uppercase tracking-wider hover:border-red-500 transition-all">GIPERKARLAR</button>
+                    <button onclick="filterCategory('SUPERKAR')" class="px-5 py-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl font-['Orbitron'] text-xs font-bold uppercase tracking-wider hover:border-red-500 transition-all">SUPERKARLAR</button>
+                    <button onclick="filterCategory('TRASSA')" class="px-5 py-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl font-['Orbitron'] text-xs font-bold uppercase tracking-wider hover:border-red-500 transition-all">TRASSA</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Grid Section -->
+    <section id="catalog" class="py-24 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-xs font-['Orbitron'] font-black text-red-500 tracking-widest uppercase mb-3">Ezyrox Ultra Kolleksiyasi</h2>
+                <p class="text-4xl md:text-6xl font-black font-['Orbitron'] tracking-tight">SARALANGAN SUPERKARLAR</p>
+                <div class="w-32 h-1.5 bg-gradient-to-r from-red-600 to-orange-500 mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Dynamic Car Grid -->
+            <div id="carGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+        </div>
+    </section>
+
+    <!-- Detailed Modal Box -->
+    <div id="carModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl hidden p-4 sm:p-6 overflow-y-auto">
+        <div class="bg-slate-900 border border-red-600/40 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative my-8 my-auto">
+            <button onclick="closeModal()" class="absolute top-6 right-6 bg-red-600 hover:bg-red-700 text-white w-12 h-12 rounded-2xl font-black text-xl flex items-center justify-center z-20 transition-all shadow-lg shadow-red-600/50">✕</button>
+            <div class="relative h-96 overflow-hidden bg-slate-950">
+                <img id="modalImg" src="" alt="Car Image" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                <span id="modalType" class="absolute bottom-6 left-8 bg-red-600 text-white font-['Orbitron'] text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest"></span>
+            </div>
+            <div class="p-8 sm:p-12">
+                <h3 id="modalTitle" class="text-3xl sm:text-5xl font-black font-['Orbitron'] mb-6 text-white tracking-tight"></h3>
+                <div id="modalDesc" class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 space-y-4"></div>
+                
+                <!-- Specs Table inside Modal -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 bg-slate-950 rounded-2xl border border-slate-800 font-['Orbitron'] mb-8">
+                    <div>
+                        <p class="text-xs text-slate-500 mb-1">OT KUCHI</p>
+                        <p id="modalHp" class="text-lg font-bold text-red-500"></p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 mb-1">TEZLIK</p>
+                        <p id="modalSpeed" class="text-lg font-bold text-orange-500"></p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 mb-1">0-100 KM/S</p>
+                        <p id="modalAccel" class="text-lg font-bold text-yellow-500"></p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 mb-1">MOTOR</p>
+                        <p id="modalEngine" class="text-lg font-bold text-white"></p>
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <button onclick="closeModal()" class="px-8 py-4 bg-slate-800 hover:bg-red-600 text-white font-['Orbitron'] font-bold text-xs rounded-xl transition-all uppercase">
+                        Oynani Yopish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Massive Encyclopedia Section -->
+    <section id="encyclopedia" class="py-28 px-6 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-['Orbitron'] font-bold text-red-500 tracking-widest uppercase mb-3">Tarix va Texnologiya</h2>
+                <p class="text-4xl md:text-5xl font-black font-['Orbitron']">EZYROX ENSIKLOPEDIYASI</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-slate-300 leading-relaxed text-base">
+                <div class="bg-slate-900/60 p-8 rounded-3xl border border-slate-800">
+                    <h3 class="text-2xl font-bold font-['Orbitron'] text-red-500 mb-4">1. Superkarlar Evolyutsiyasi</h3>
+                    <p class="mb-4">
+                        Superkar tushunchasi XX asrning o'rtalarida, muhandislar oddiy transport vositalaridan ko'ra ko'proq tezlik va quvvatga ega bo'lgan avtomobillarni loyihalashni boshlaganlarida paydo bo'ldi. Dastlabki modellar asosan poyga yo'laklari uchun mo'ljallangan edi.
+                    </p>
+                    <p>
+                        Vaqt o'tishi bilan aerodinamika, uglerod tolasi (carbon-fiber) va elektron boshqaruv tizimlarining rivojlanishi tufayli superkarlar nafaqat tezkor, balki xavfsiz va hayratomuz darajada chiroyli ko'rinishga ega bo'ldi.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/60 p-8 rounded-3xl border border-slate-800">
+                    <h3 class="text-2xl font-bold font-['Orbitron'] text-orange-500 mb-4">2. V12 va W16 Dvigatellar Shon-Shuhrati</h3>
+                    <p class="mb-4">
+                        Ichki yonuv dvigatellarining cho'qqisi hisoblangan V12 va W16 motorlari giperkarlarga mislsiz quvvat bag'ishlaydi. Bugatti, Lamborghini va Ferrari kabi brendlar o'zlarining eng flagman modellarida aynan ushbu dahshatli motorlardan foydalanadilar.
+                    </p>
+                    <p>
+                        Bugungi kunda gibrid va elektr texnologiyalari birlashib, 2000 ot kuchidan ortiq bo'lgan gibrid giperkarlar davrini boshlab berdi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-black border-t border-slate-900 text-center text-slate-500 text-sm font-['Orbitron']">
+        <p class="mb-2">&copy; 2026 Ezyrox Corporation. Barcha huquqlar himoyalangan.</p>
+        <p class="text-xs text-slate-600">Muallif va Bosh Dasturchi: <span class="text-red-500 font-bold">Elnur</span></p>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        const carData = [
+            {
+                id: 1,
+                name: "Bugatti Chiron Super Sport",
+                hp: "1600 Ot kuchi",
+                speed: "440 km/soat",
+                accel: "2.4 soniya",
+                engine: "8.0L Quad-Turbo W16",
+                type: "GIPERKAR",
+                desc: "Bugatti Chiron Super Sport — muhandislik mo'jizasi. U 8 litrli W16 dvigatel va 4 ta turboquvvatlagich yordamida harakatlanadi. Ushbu avtomobil cheklangan miqdorda ishlab chiqarilgan bo'lib, uning har bir detali aerodinamik qarshilikni kamaytirish va kosmik tezlikka erishish uchun maxsus tayyorlangan.",
+                img: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 2,
+                name: "Lamborghini Aventador SVJ",
+                hp: "770 Ot kuchi",
+                speed: "351 km/soat",
+                accel: "2.8 soniya",
+                engine: "6.5L Atmosferali V12",
+                type: "SUPERKAR",
+                desc: "Lamborghini Aventador SVJ — Italiya superkarlarining eng yorqin namoyandasi. U o'zining V12 atmosferali motori va ALA 2.0 aktiv aerodinamik tizimi bilan trassalarda mutlaq ustunlikka ega. Unikal eshik ochilish mexanizmi va agressiv dizayni uni har qanday yo'lda e'tibor markaziga aylantiradi.",
+                img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 3,
+                name: "Porsche 911 GT3 RS",
+                hp: "525 Ot kuchi",
+                speed: "296 km/soat",
+                accel: "3.2 soniya",
+                engine: "4.0L Boxer-6",
+                type: "TRASSA",
+                desc: "Porsche 911 GT3 RS — professional poyga trassalari uchun moslashtirilgan mukammal nemis avtomobili. U ulkan orqa anti-krylo (qanot) va DRS tizimi bilan jihozlangan. Yuqori oborotli motori va yengil kuzovi tufayli burilishlarni aqlbovar qilmas tezlikda bosib o'tadi.",
+                img: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 4,
+                name: "BMW M4 Competition xDrive",
+                hp: "510 Ot kuchi",
+                speed: "290 km/soat",
+                accel: "3.5 soniya",
+                engine: "3.0L Twin-Turbo Inline-6",
+                type: "SUPERKAR",
+                desc: "BMW M4 Competition — kundalik hayot va poyga trassalarini birlashtirgan sport kupesi. M xDrive to'liq tortish tizimi va M TwinPower Turbo motori unga har qanday ob-havo sharoitida maksimal tezlanish va barqarorlikni ta'minlaydi.",
+                img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 5,
+                name: "Koenigsegg Jesko Absolut",
+                hp: "1600 Ot kuchi",
+                speed: "500 km/soat",
+                accel: "2.5 soniya",
+                engine: "5.0L Twin-Turbo V8",
+                type: "GIPERKAR",
+                desc: "Koenigsegg Jesko Absolut — dunyodagi eng tezkor avtomobil bo'lish uchun loyihalashtirilgan. U Shvetsiyada ishlab chiqarilgan bo'lib, uning 9-pog'onali LST (Light Speed Transmission) uzatish qutisi tishli g'ildiraklarni soniyaning mingdan bir qismida almashtiradi.",
+                img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 6,
+                name: "McLaren 720S Spider",
+                hp: "720 Ot kuchi",
+                speed: "341 km/soat",
+                accel: "2.9 soniya",
+                engine: "4.0L Twin-Turbo V8",
+                type: "SUPERKAR",
+                desc: "McLaren 720S Spider — uglerod tolali Monocage II-S korpusiga ega kabriolet superkar. U Britaniya muhandisligining eng cho'qqisidir va o'zining futuristik diodli chiroqlari hamda kapalaksimon ochiladigan eshiklari bilan ajralib turadi.",
+                img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 7,
+                name: "Ferrari SF90 Stradale",
+                hp: "986 Ot kuchi",
+                speed: "340 km/soat",
+                accel: "2.5 soniya",
+                engine: "4.0L V8 + 3 ta Elektromotor",
+                type: "GIPERKAR",
+                desc: "Ferrari SF90 Stradale — brendning birinchi gibrid giperkari. U V8 benzinli motor va uchta elektr dvigatelining quvvatini birlashtiradi. To'liq elektr rejimida ham sokin va tez harakatlana oladi.",
+                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 8,
+                name: "Audi R8 V10 Performance",
+                hp: "620 Ot kuchi",
+                speed: "331 km/soat",
+                accel: "3.1 soniya",
+                engine: "5.2L Atmosferali V10",
+                type: "SUPERKAR",
+                desc: "Audi R8 V10 — afsonaviy Quattro to'liq tortish tizimiga ega superkar. Atmosferali V10 motorining sof va baland ovozi haydovchiga chinakam poyga hissini beradi.",
+                img: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 9,
+                name: "Mercedes-AMG GT Black Series",
+                hp: "730 Ot kuchi",
+                speed: "325 km/soat",
+                accel: "3.2 soniya",
+                engine: "4.0L Flat-Plane V8",
+                type: "TRASSA",
+                desc: "Mercedes-AMG GT Black Series — Nyurburgring poyga yo'lagining sobiq rekordchisi. U tekis kranli (flat-plane) V8 motor va poyga uglerod elementlari bilan jihozlangan.",
+                img: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
+            }
+        ];
+
+        const carGrid = document.getElementById('carGrid');
+
+        function renderCars(data) {
+            carGrid.innerHTML = '';
+            data.forEach((car) => {
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-3xl overflow-hidden group transition-all duration-500 flex flex-col justify-between cursor-pointer";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="h-64 overflow-hidden relative bg-slate-950">
+                            <img src="${car.img}" alt="${car.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <span class="absolute top-4 left-4 bg-red-600 text-white font-['Orbitron'] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-md">${car.type}</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-black font-['Orbitron'] mb-2 text-white group-hover:text-red-500 transition-colors">${car.name}</h3>
+                            <p class="text-slate-400 text-xs line-clamp-3 mb-6 leading-relaxed">${car.desc}</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="flex items-center justify-between font-['Orbitron'] text-xs font-bold pt-4 border-t border-slate-800/80 mb-6">
+                            <span class="text-red-500">${car.hp}</span>
+                            <span class="text-slate-300">${car.speed}</span>
+                        </div>
+                        <button onclick="openModal(${car.id})" class="w-full py-3.5 bg-slate-800 hover:bg-red-600 text-white font-['Orbitron'] font-bold text-xs rounded-xl transition-all uppercase tracking-wider">
+                            Batafsil Ko'rish
+                        </button>
+                    </div>
+                `;
+                carGrid.appendChild(card);
+            });
+        }
+
+        function openModal(id) {
+            const car = carData.find(c => c.id === id);
+            if(!car) return;
+
+            document.getElementById('modalImg').src = car.img;
+            document.getElementById('modalType').innerText = car.type;
+            document.getElementById('modalTitle').innerText = car.name;
+            document.getElementById('modalDesc').innerText = car.desc;
+            document.getElementById('modalHp').innerText = car.hp;
+            document.getElementById('modalSpeed').innerText = car.speed;
+            document.getElementById('modalAccel').innerText = car.accel;
+            document.getElementById('modalEngine').innerText = car.engine;
+
+            document.getElementById('carModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('carModal').classList.add('hidden');
+        }
+
+        function filterCars() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = carData.filter(car => car.name.toLowerCase().includes(input));
+            renderCars(filtered);
+        }
+
+        function filterCategory(cat) {
+            if(cat === 'ALL') {
+                renderCars(carData);
+            } else {
+                const filtered = carData.filter(car => car.type.includes(cat));
+                renderCars(filtered);
+            }
+        }
+
+        function playEngineSound() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(60, audioCtx.currentTime); 
+                osc.frequency.exponentialRampToValueAtTime(340, audioCtx.currentTime + 0.7); 
+
+                gain.gain.setValueAtTime(0.4, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.0);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 1.0);
+            } catch (e) {
+                console.log("Audio Error:", e);
+            }
+        }
+
+        // Initial Render
+        renderCars(carData);
+    </script>
+</body>
+</html>
